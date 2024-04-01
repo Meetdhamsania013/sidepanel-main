@@ -433,7 +433,7 @@ const NewTable = () => {
       <Row>
         <div class="footer_table">
           <div class="hint-text">
-            <Dropdown className="custmenu-dropdown">
+            <Dropdown>
               <Dropdown.Toggle id="dropdown-basic">
                 <Link to="/">10</Link>
               </Dropdown.Toggle>
