@@ -1,5 +1,15 @@
 import React, { useState } from "react";
-import { Col, Button, Container, Row, Card, Modal } from "react-bootstrap";
+import {
+  Col,
+  Button,
+  Container,
+  Row,
+  Card,
+  Modal,
+  ModalBody,
+  ModalFooter,
+  Form,
+} from "react-bootstrap";
 import "./NewTable.scss";
 import { FaMinusCircle } from "react-icons/fa";
 import { FaPlusCircle } from "react-icons/fa";
@@ -8,8 +18,25 @@ import { HiOutlineArrowNarrowUp } from "react-icons/hi";
 import { MdDelete } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
 import userImage from "../../img/user_icon.png";
+import Dropdown from "react-bootstrap/Dropdown";
+import { Link } from "react-router-dom";
+import { MdDeleteSweep } from "react-icons/md";
 
 const NewTable = () => {
+  const [modalState, setModalState] = useState("close");
+
+  const handleShowModalEdit = () => {
+    setModalState("modal-edit");
+  };
+
+  const handleShowModalDelete = () => {
+    setModalState("modal-delete");
+  };
+
+  const handleClose = () => {
+    setModalState("close");
+  };
+
   return (
     <Container fluid>
       <Row>
@@ -18,7 +45,7 @@ const NewTable = () => {
         </div>
       </Row>
       <Row>
-        <Col>
+        <Col xs={3}>
           <div class="form-group has-search">
             <span class="form-control-feedback">
               <IoSearch />
@@ -28,14 +55,22 @@ const NewTable = () => {
         </Col>
         <Col className="action_btn_wrap">
           <div>
-            <a href="#" class="btn btn-success">
+            <a
+              href="javascript:void(0)"
+              class="btn btn-success"
+              onClick={handleShowModalEdit}
+            >
               <span>
                 <FaPlusCircle /> Add New Employee
               </span>
             </a>
           </div>
           <div>
-            <a href="#" class="btn btn-danger">
+            <a
+              href="javascript:void(0)"
+              class="btn btn-danger"
+              onClick={handleShowModalDelete}
+            >
               <span>
                 <FaMinusCircle /> Delete
               </span>
@@ -48,7 +83,6 @@ const NewTable = () => {
           <thead className="responsive-table_head">
             <tr className="responsive-table_row">
               <th className="responsive-table_head_title">
-                
                 <input
                   type="checkbox"
                   class="custom-control-input"
@@ -81,6 +115,9 @@ const NewTable = () => {
               </th>
               <th className="responsive-table_head_title responsive-table_head_title_country">
                 Country
+              </th>
+              <th className="responsive-table_head_title responsive-table_head_title_country">
+                Action
               </th>
             </tr>
           </thead>
@@ -121,10 +158,10 @@ const NewTable = () => {
               </td>
               <td className="responsive-table_body_text responsive-table_action_icons">
                 <div className="edit">
-                  <MdEdit />
+                  <Link onClick={handleShowModalEdit}><Link onClick={handleShowModalEdit}><MdEdit /></Link></Link>
                 </div>
                 <div className="delete">
-                  <MdDelete />
+				<Link onClick={handleShowModalDelete}> <Link onClick={handleShowModalDelete}><MdDelete /></Link></Link>
                 </div>
               </td>
             </tr>
@@ -164,10 +201,10 @@ const NewTable = () => {
               </td>
               <td className="responsive-table_body_text responsive-table_action_icons">
                 <div className="edit">
-                  <MdEdit />
+                  <Link onClick={handleShowModalEdit}><MdEdit /></Link>
                 </div>
                 <div className="delete">
-                  <MdDelete />
+				<Link onClick={handleShowModalDelete}> <Link onClick={handleShowModalDelete}><MdDelete /></Link></Link>
                 </div>
               </td>
             </tr>
@@ -209,10 +246,10 @@ const NewTable = () => {
               </td>
               <td className="responsive-table_body_text responsive-table_action_icons">
                 <div className="edit">
-                  <MdEdit />
+                  <Link onClick={handleShowModalEdit}><MdEdit /></Link>
                 </div>
                 <div className="delete">
-                  <MdDelete />
+				  <Link onClick={handleShowModalDelete}> <Link onClick={handleShowModalDelete}><MdDelete /></Link></Link>
                 </div>
               </td>
             </tr>
@@ -252,14 +289,14 @@ const NewTable = () => {
               </td>
               <td className="responsive-table_body_text responsive-table_action_icons">
                 <div className="edit">
-                  <MdEdit />
+                  <Link onClick={handleShowModalEdit}><MdEdit /></Link>
                 </div>
                 <div className="delete">
-                  <MdDelete />
+                   <Link onClick={handleShowModalDelete}><MdDelete /></Link>
                 </div>
               </td>
             </tr>
-			<tr className="responsive-table_row">
+            <tr className="responsive-table_row">
               <td className="check_wrap">
                 <input
                   type="checkbox"
@@ -295,10 +332,10 @@ const NewTable = () => {
               </td>
               <td className="responsive-table_body_text responsive-table_action_icons">
                 <div className="edit">
-                  <MdEdit />
+                  <Link onClick={handleShowModalEdit}><MdEdit /></Link>
                 </div>
                 <div className="delete">
-                  <MdDelete />
+                   <Link onClick={handleShowModalDelete}><MdDelete /></Link>
                 </div>
               </td>
             </tr>
@@ -338,10 +375,10 @@ const NewTable = () => {
               </td>
               <td className="responsive-table_body_text responsive-table_action_icons">
                 <div className="edit">
-                  <MdEdit />
+                  <Link onClick={handleShowModalEdit}><MdEdit /></Link>
                 </div>
                 <div className="delete">
-                  <MdDelete />
+                   <Link onClick={handleShowModalDelete}><MdDelete /></Link>
                 </div>
               </td>
             </tr>
@@ -383,10 +420,10 @@ const NewTable = () => {
               </td>
               <td className="responsive-table_body_text responsive-table_action_icons">
                 <div className="edit">
-                  <MdEdit />
+                  <Link onClick={handleShowModalEdit}><MdEdit /></Link>
                 </div>
                 <div className="delete">
-                  <MdDelete />
+                   <Link onClick={handleShowModalDelete}><MdDelete /></Link>
                 </div>
               </td>
             </tr>
@@ -396,45 +433,175 @@ const NewTable = () => {
       <Row>
         <div class="footer_table">
           <div class="hint-text">
-            Showing <b>5</b> out of <b>25</b> entries
+            <Dropdown className="custmenu-dropdown">
+              <Dropdown.Toggle id="dropdown-basic">
+                <Link to="/">10</Link>
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Dropdown.Item href="#/">15</Dropdown.Item>
+                <Dropdown.Item href="#/">20</Dropdown.Item>
+                <Dropdown.Item href="#/">25</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+            <span>
+              Showing <b> 10 </b> out of <b> 25 </b> entries
+            </span>
           </div>
           <ul class="pagination">
             <li class="page-item disabled">
-              <a href="#">Previous</a>
+              <a href="javascript:void(0)">Previous</a>
             </li>
             <li class="page-item">
-              <a href="#" class="page-link">
+              <a href="javascript:void(0)" class="page-link">
                 1
               </a>
             </li>
             <li class="page-item">
-              <a href="#" class="page-link">
+              <a href="javascript:void(0)" class="page-link">
                 2
               </a>
             </li>
             <li class="page-item active">
-              <a href="#" class="page-link">
+              <a href="javascript:void(0)" class="page-link">
                 3
               </a>
             </li>
             <li class="page-item">
-              <a href="#" class="page-link">
+              <a href="javascript:void(0)" class="page-link">
                 4
               </a>
             </li>
             <li class="page-item">
-              <a href="#" class="page-link">
+              <a href="javascript:void(0)" class="page-link">
                 5
               </a>
             </li>
             <li class="page-item">
-              <a href="#" class="page-link">
+              <a href="javascript:void(0)" class="page-link">
                 Next
               </a>
             </li>
           </ul>
         </div>
       </Row>
+
+      {/* Edit Modalpopup */}
+
+      <Modal show={modalState === "modal-edit"}>
+        <Modal.Header closeButton>
+          <Modal.Title>Add Data</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Row className="mb-20">
+            <Col xs={6}>
+              <Form.Group controlId="formName">
+                <Form.Label>Name</Form.Label>
+                <Form.Control type="text" name="name" placeholder="Name" />
+              </Form.Group>
+            </Col>
+            <Col xs={6}>
+              <Form.Group controlId="formMobile">
+                <Form.Label>Designation</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="mobile"
+                  placeholder="Designation"
+                />
+              </Form.Group>
+            </Col>
+          </Row>
+		  <Row className="mb-20">
+            <Col xs={6}>
+              <Form.Group controlId="formName">
+                <Form.Label>Policy Price</Form.Label>
+                <Form.Control type="text" name="Policy" placeholder="Policy Price" />
+              </Form.Group>
+            </Col>
+            <Col xs={6}>
+              <Form.Group controlId="formMobile">
+                <Form.Label>Policy Name</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="Policy"
+                  placeholder="Policy Name"
+                />
+              </Form.Group>
+            </Col>
+          </Row>
+
+		  <Row className="mb-20">
+		  <Col xs={6}>
+              <Form.Group controlId="formMobile">
+                <Form.Label>Status</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="Status"
+                  placeholder="Write Status"
+                />
+              </Form.Group>
+            </Col>
+            <Col xs={6}>
+              <Form.Group controlId="formName">
+                <Form.Label>Type</Form.Label>
+                <Form.Control type="text" name="Type" placeholder="Type" />
+              </Form.Group>
+            </Col>
+          </Row>
+
+          <Row className="mb-20">
+            <Col xs={6}>
+              <Form.Group controlId="formMail">
+                <Form.Label>Date</Form.Label>
+                <Form.Control type="text" name="text" placeholder="Date" />
+              </Form.Group>
+            </Col>
+            <Col xs={6}>
+              <Form.Group controlId="formComment">
+                <Form.Label>Country</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="Country"
+                  placeholder="Country"
+                />
+              </Form.Group>
+            </Col>
+          </Row>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="success" onClick={handleClose}>
+            Yes, Save
+          </Button>
+          <Button variant="secondary" onClick={handleClose}>
+            No, Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+      {/* Delete Modalpopup */}
+      <Modal show={modalState === "modal-delete"}>
+        <Modal.Header closeButton>
+          <Modal.Title>Delete Data</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <div className="delete_content">
+            <div className="icon">
+              <MdDeleteSweep />
+            </div>
+            <div className="text">
+              Woohoo, Are you sure you want to delete Data ?
+            </div>
+          </div>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="danger" onClick={handleClose}>
+            Yes, Delete
+          </Button>
+          <Button variant="secondary" onClick={handleClose}>
+            No, Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Container>
   );
 };
