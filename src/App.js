@@ -7,7 +7,7 @@ import { SiPhp } from "react-icons/si";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import "./App.scss";
-import DataTable from "./component/Table/Table";
+import NewTable from "./component/NewTable/NewTable";
 import Dropdown from "react-bootstrap/Dropdown";
 
 function App() {
@@ -118,8 +118,9 @@ function App() {
           style={{ paddingLeft: `${sidebarWidth}px` }}
         >
           <div className="main-content">
-            <h3 className="mb-20 mt-20">User Details</h3>
-            <DataTable />
+            {/* <h3 className="mb-20 mt-20">User Details</h3>
+            <DataTable /> */}
+            <NewTable />
           </div>
         </div>
       </div>

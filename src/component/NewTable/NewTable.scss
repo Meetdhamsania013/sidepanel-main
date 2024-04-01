@@ -1,0 +1,258 @@
+/* Responsive Table Style */
+.responsive-table {
+  background-color: #fefefe;
+  border-collapse: collapse;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.02);
+  width: 100%;
+  margin: 1rem 0 2rem 0;
+  overflow: hidden;
+  letter-spacing: 0.4px;
+}
+.responsive-table_row {
+  display: grid;
+  border-bottom: 1px solid #edeef2;
+  padding: 0 0.5rem;
+}
+@media (min-width: 768px) {
+  .responsive-table_row {
+    grid-template-columns: 0.4fr 2fr 1fr 1fr 2fr 1fr 1fr 0.4fr;
+  }
+}
+.user_wrap {
+  line-height: 1.2;
+}
+.designation {
+  font-size: 12px;
+  color: #a5a1a1;
+  font-weight: 400;
+}
+.responsive-table_row th,
+.responsive-table_row td {
+  padding: 0.8rem;
+  font-size: 14px;
+  color: #141a4e;
+  img{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+}
+.responsive-table_head {
+  background-color: #e1e8f2;
+}
+@media (max-width: 767px) {
+  .responsive-table_head {
+    display: none;
+  }
+}
+.checkbox_title {
+  padding-left: 0px;
+}
+.check_wrap {
+  display: flex;
+}
+.responsive-table_body .responsive-table_row {
+  transition: 0.1s linear;
+}
+.responsive-table_body .responsive-table_row:last-child {
+  border-bottom: none;
+}
+.responsive-table_body .responsive-table_row:hover {
+  color: #ffffff;
+  background-color: #cbe3f9;
+}
+.responsive-table_body_text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.responsive-table_body_text::before {
+  margin-right: 1rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.responsive-table_body_text_name {
+  font-weight: 600;
+}
+
+/* SVG Up Arrow Style */
+.up-arrow {
+  height: 100%;
+  max-height: 1.8rem;
+  margin-left: 1rem;
+}
+
+/* SVG User Icon Style */
+.user-icon {
+  width: 100%;
+  max-width: 2rem;
+  height: auto;
+  margin-right: 0.5rem;
+}
+
+/* Status Indicator Style */
+.status-indicator {
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background: #222222;
+  margin-right: 0.5rem;
+}
+.status-indicator_wrap {
+  display: flex;
+  width: 100px;
+}
+.status-indicator_active {
+  background: #25be64;
+}
+.indicator_active {
+  color: #25be64;
+}
+.status-indicator_inactive {
+  background: #dadde4;
+}
+.indicator_inactive {
+  color: #a2a4a9;
+}
+.status-indicator_new {
+  background: #febf02;
+}
+.indicator_new {
+  color: #febf02;
+}
+
+.action_btn_wrap {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  .btn-success {
+    margin-left: 15px;
+  }
+  .btn {
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    min-width: 50px;
+    border-radius: 3px;
+    border: none;
+    outline: none !important;
+    margin-left: 10px;
+    padding: 10px;
+    svg {
+      margin-right: 5px;
+    }
+  }
+}
+.form-group {
+  position: relative;
+}
+.form-control-feedback {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  svg {
+    font-size: 20px;
+    color: #adc0d1;
+  }
+}
+
+.page_title{
+  font-size: 24px;
+  color: #435d7d;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e1dcdc;
+  padding: 10px 0px;
+  margin-bottom: 30px;
+  span{
+    font-weight: 600;
+    font-size: 24px;
+  }
+}
+.title_icon{
+  padding-left: 8px;
+  cursor: pointer;
+  &:hover{
+    transform: rotate(180deg);
+    display: inline-block;
+    padding-right: 8px;
+  }
+}
+.responsive-table_action_icons{
+  display: flex;
+  flex-wrap: nowrap;
+  .edit{
+    cursor: pointer;
+    svg{
+      font-size: 20px;
+      color: #FFC107;
+      &:hover{
+        color: #b18607;
+      }
+    }
+  }
+  .delete{
+    margin-left: 10px;
+    cursor: pointer;
+    svg{
+      font-size: 20px;
+      color: #dc3545;
+      &:hover{
+        color: #a02733;
+      }
+    }
+  }
+}
+
+.inactive{
+  filter: grayscale(1);
+  .delete, .edit{
+    cursor: not-allowed;
+  }
+}
+
+.pagination {
+  float: right;
+  margin: 0 0 5px;
+}
+.pagination li a {
+  border: none;
+  font-size: 13px;
+  min-width: 30px;
+  min-height: 30px;
+  color: #999;
+  margin: 0 2px;
+  line-height: 30px;
+  border-radius: 2px !important;
+  text-align: center;
+  padding: 0 6px;
+  text-decoration: none;
+}
+.pagination li a:hover {
+  color: #666;
+}	
+.pagination li.active a, .pagination li.active a.page-link {
+  background: #c5d6ef;
+  color: #000;
+}
+.page-link:focus{
+  box-shadow: none;
+}
+.pagination li.active a:hover {        
+  background: #486574;
+  color: #fff;
+}
+.pagination li.disabled i {
+  color: #ccc;
+}
+.pagination li i {
+  font-size: 16px;
+  padding-top: 6px
+}
+.hint-text {
+  float: left;
+  margin-top: 10px;
+  font-size: 13px;
+}
