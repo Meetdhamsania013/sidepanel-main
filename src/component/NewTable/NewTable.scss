@@ -275,9 +275,17 @@
   }
 }
 
-button#dropdown-basic a {
-  color: white;
-  text-decoration: none;
+button#dropdown-basic {
+  background: #c5d6ef;
+  border: 1px solid #c5d6ef;
+  border-radius: 4px;
+  a {
+    color: rgb(58, 57, 57);
+    text-decoration: none;
+  }
+}
+.dropdown-toggle::after{
+  border-top: 0.3em solid rgb(63, 63, 63);
 }
 
 .delete_content {

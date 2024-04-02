@@ -1,18 +1,15 @@
 import { useState, useCallback } from "react";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
-import { FaHome } from "react-icons/fa";
-import { FaAngular } from "react-icons/fa6";
-import { RiReactjsLine } from "react-icons/ri";
-import { SiPhp } from "react-icons/si";
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
 import "./App.scss";
 import NewTable from "./component/NewTable/NewTable";
-import Dropdown from "react-bootstrap/Dropdown";
+
+import SidebarItem from "../src/component/SidebarItem/SidebarItem";
+import items from "../src/data/sidebar.json";
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [sidebarWidth, setSidebarWidth] = useState(200);
+  const [sidebarWidth, setSidebarWidth] = useState(240);
   const [_isResizing, setIsResizing] = useState(false);
 
   const [isHover, setIsHover] = useState(false);
@@ -73,32 +70,9 @@ function App() {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseOut}
           >
-            <Link to="/">
-              <FaHome />
-              Home
-            </Link>
-            <Dropdown className="custmenu-dropdown">
-              <Dropdown.Toggle id="dropdown-basic">
-                <Link to="/">
-                  <FaAngular />
-                  Angular
-                </Link>
-              </Dropdown.Toggle>
-
-              <Dropdown.Menu>
-                <Dropdown.Item href="#/">Action</Dropdown.Item>
-                <Dropdown.Item href="#/">Another action</Dropdown.Item>
-                <Dropdown.Item href="#/">Something else</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-            <Link to="">
-              <RiReactjsLine />
-              React
-            </Link>
-            <Link to="">
-              <SiPhp />
-              PHP
-            </Link>
+           <div className="sidebar_inner_wrap">
+              { items.map((item, index) => <SidebarItem key={index} item={item} />) }
+            </div>
           </div>
           <div
             className={`resize-handle ${!isSidebarOpen ? "rotate180" : ""}`}

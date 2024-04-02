@@ -20,7 +20,7 @@ import { MdEdit } from "react-icons/md";
 import userImage from "../../img/user_icon.png";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Link } from "react-router-dom";
-import { MdDeleteSweep } from "react-icons/md";
+import { MdDeleteForever } from "react-icons/md";
 
 const NewTable = () => {
   const [modalState, setModalState] = useState("close");
@@ -45,7 +45,7 @@ const NewTable = () => {
         </div>
       </Row>
       <Row>
-        <Col xs={3}>
+        <Col xs={3} className="pl-0">
           <div class="form-group has-search">
             <span class="form-control-feedback">
               <IoSearch />
@@ -53,7 +53,7 @@ const NewTable = () => {
             <input type="text" class="form-control" placeholder="Search" />
           </div>
         </Col>
-        <Col className="action_btn_wrap">
+        <Col className="action_btn_wrap pr-0">
           <div>
             <a
               href="javascript:void(0)"
@@ -586,7 +586,7 @@ const NewTable = () => {
         <Modal.Body>
           <div className="delete_content">
             <div className="icon">
-              <MdDeleteSweep />
+              <MdDeleteForever />
             </div>
             <div className="text">
               Woohoo, Are you sure you want to delete Data ?

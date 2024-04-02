@@ -1,0 +1,52 @@
+[
+    {
+        "title": "Home",
+        "icon": "bi-house-fill",
+        "path": "/"
+    },
+    {
+        "title": "Profile",
+        "icon": "bi-person-fill",
+        "childrens": [
+            {
+                "title": "Profile",
+                "path": "/"
+            },
+            {
+                "title": "Settings",
+                "childrens": [
+                    {
+                        "title": "Account",
+                        "path": "/"
+                    },
+                    {
+                        "title": "Billing",
+                        "childrens": [
+                            {
+                                "title": "Payment",
+                                "path": "/"
+                            },
+                            {
+                                "title": "Subscription",
+                                "path": "/"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Notifications",
+                        "path": "/"
+                    }
+                ]
+            },
+            {
+                "title": "Logout",
+                "path": "/"
+            }
+        ]
+    },
+    {
+        "title": "Report Bug",
+        "icon": "bi-bug",
+        "path": "/"
+    }
+]

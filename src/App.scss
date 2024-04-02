@@ -9,6 +9,12 @@
 .p-0 {
   padding: 0px;
 }
+.pl-0{
+  padding-left: 0px;
+}
+.pr-0{
+  padding-right: 0px;
+}
 .mt-20 {
   margin-top: 20px;
 }
@@ -50,7 +56,8 @@
   margin-bottom: 15px;
 }
 .form-label {
-  margin-bottom: 5px;
+  margin-bottom: 4px;
+  font-size: 13px;
 }
 .form-control:focus {
   box-shadow: none;
@@ -129,31 +136,6 @@
   }
 }
 
-.sidebar-links {
-  padding: 40px 0 20px;
-  position: absolute;
-  height: 100%;
-  top: 0;
-  left: 0;
-  width: 95%;
-  a {
-    padding: 10px 30px;
-    margin: 10px 0;
-    color: #fff;
-    display: block;
-    font-size: 18px;
-    text-decoration: none;
-    &:hover {
-      color: #c6daeb;
-    }
-
-    svg {
-      font-size: 26px;
-      margin-right: 10px;
-    }
-  }
-}
-
 .modal-header {
   padding: 6px 15px;
 }
@@ -197,3 +179,14 @@
     transform: rotateZ(-0deg);
   }
 }
+
+
+.sidebar_inner_wrap{
+  color: white;
+  width: 97%;
+  top: 50px;
+  position: relative;
+  overflow: auto;
+  height: 100vh;
+}
+
